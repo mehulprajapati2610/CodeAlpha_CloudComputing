@@ -1,7 +1,6 @@
 import csv
-from database import insert_entry  # Make sure database.py has MongoDB code from previous step
+from database import insert_entry  
 
-# Path to your CSV file
 csv_file = 'sample_data.csv'
 
 try:
@@ -10,7 +9,7 @@ try:
         for row in reader:
             name = row['name']
             email = row['email']
-            # Attempt to insert entry into MongoDB
+            
             success = insert_entry(name, email)
             if success:
                 print(f"Added: {name}, {email}")
@@ -21,3 +20,4 @@ except FileNotFoundError:
     print(f"Error: CSV file '{csv_file}' not found. Please check the file path.")
 except Exception as e:
     print(f"An error occurred: {e}")
+
