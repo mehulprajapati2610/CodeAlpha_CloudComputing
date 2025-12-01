@@ -1,51 +1,47 @@
-# Data Redundancy Removal System
+# Task 1: Data Redundancy Removal System
 
-This project focuses on detecting and preventing duplicate entries in a cloud database. Incoming data is checked against existing records, and only unique entries are stored.
+## Overview
 
-## Key Features
+Prevents duplicate data in **MongoDB Atlas** by reading from a CSV and storing only **unique entries**.
 
-* Detects and blocks duplicate data
-* Ensures only unique information is saved
-* Cloud-based database support
-* Simple REST API for inserting and verifying entries
+## Features
 
-## Technologies Used
+* Detects duplicates by email
+* Imports data from CSV
+* Stores only unique records in cloud
 
-* Node.js
-* Express.js
-* MongoDB Atlas
-* Mongoose
-* Postman
+## Tech
+
+* Python 3.13
+* MongoDB Atlas (Free Tier)
+* `pymongo` library
+
+## Setup & Run
+
+1. Install dependencies:
+
+```bash
+pip install pymongo
+```
+
+2. Create MongoDB Atlas cluster & database (`RedundancyDB`) with collection `entries`.
+3. Add a database user and allow your IP.
+4. Update `database.py` with connection string.
+5. Prepare `sample_data.csv` with data.
+6. Run:
+
+```bash
+python main.py
+```
 
 ## How It Works
 
-1. User submits data such as email, text, or ID
-2. System checks if a matching entry already exists
-3. Duplicate entries are rejected
-4. Unique entries are stored successfully
+CSV → Python → MongoDB
 
-## Running the Project
+* Adds unique entries
+* Skips duplicates
 
-```
-npm install
-node index.js
-```
+## Cloud Benefits
 
-Add your MongoDB connection string in a `.env` file.
-
-## API Example
-
-POST /add
-Sample request:
-
-```json
-{
-  "email": "user@example.com",
-  "data": "sample entry"
-}
-```
-
-## Output
-
-* “Data added successfully” (unique entry)
-* “Data already exists” (duplicate found)
+* Accessible anywhere
+* Scalable & reliable
