@@ -13,7 +13,7 @@ Prevents duplicate data in **MongoDB Atlas** by reading from a CSV and storing o
 ## Tech
 
 * Python 3.13
-* MongoDB Atlas (Free Tier)
+* MongoDB Atlas
 * `pymongo` library
 
 ## Setup & Run
