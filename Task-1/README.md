@@ -1,47 +1,55 @@
-# Task 1: Data Redundancy Removal System
+# Task 1: Data Redundancy Removal System ☁️
 
 ## Overview
 
-Prevents duplicate data in **MongoDB Atlas** by reading from a CSV and storing only **unique entries**.
+This project prevents **duplicate data** from being stored in a **cloud database (MongoDB Atlas)**.
+It reads entries from a CSV file and inserts only **unique records**.
 
-## Features
+---
 
-* Detects duplicates by email
-* Imports data from CSV
-* Stores only unique records in cloud
-
-## Tech
-
-* Python 3.13
-* MongoDB Atlas
-* `pymongo` library
-
-## Setup & Run
+## How to Run
 
 1. Install dependencies:
 
 ```bash
-pip install pymongo
+pip install pymongo python-dotenv
 ```
 
-2. Create MongoDB Atlas cluster & database (`RedundancyDB`) with collection `entries`.
-3. Add a database user and allow your IP.
-4. Update `database.py` with connection string.
-5. Prepare `sample_data.csv` with data.
-6. Run:
+2. Create a `.env` file with your MongoDB credentials:
+
+```
+MONGO_USER=yourUsername
+MONGO_PASSWORD=yourPassword
+MONGO_CLUSTER=cluster0.abcde.mongodb.net
+DATABASE_NAME=RedundancyDB
+```
+
+3. Make sure `.env` is in `.gitignore`.
+4. Run the script:
 
 ```bash
 python main.py
 ```
 
-## How It Works
+* Adds only unique entries from `sample_data.csv`
+* Skips duplicates automatically
 
-CSV → Python → MongoDB
+---
 
-* Adds unique entries
-* Skips duplicates
+## Cloud Computing Role
 
-## Cloud Benefits
+* **Centralized Storage:** Data is stored in the cloud and accessible from anywhere.
+* **Data Reliability:** Automatic backups ensure data is safe.
+* **Scalability:** Handles large datasets or multiple users without slowing down.
+* **Collaboration:** Multiple users/scripts can access the same database simultaneously.
+* **Real-Time Validation:** Duplicate checks happen instantly before insertion.
 
-* Accessible anywhere
-* Scalable & reliable
+---
+
+## Files
+
+* `main.py` – Reads CSV & inserts data
+* `database.py` – Connects to MongoDB and checks duplicates
+* `sample_data.csv` – Example data
+* `.env` – Local credentials (ignored by Git)
+* `README.md` – Project description
