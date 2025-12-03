@@ -1,40 +1,40 @@
-# SQL Injection Protection and Data Leak Prevention
+# Task 2 – Detecting Data Leaks Using SQL Injection
 
-This project demonstrates how to secure a cloud-based application from SQL injection attacks using encryption and prepared statements.
+This project demonstrates a simple cloud-based system to **secure user data against SQL injection attacks**. It uses **AES-256 encryption** to protect sensitive information and a **capability code mechanism** to control access. The system implements **double-layer security** by combining encryption with safe SQL queries.
 
-## Key Features
-
-* AES-256 encryption for password storage
-* SQL injection protection using parameterized queries
-* Capability code for restricted admin access
-* Demonstration of unsafe vs safe login attempts
-* Works with cloud-hosted SQL database
+---
 
 ## Technologies Used
 
-* Node.js or PHP
-* MySQL
-* Crypto (AES-256)
-* Railway or Render (optional)
+- **FastAPI** – lightweight Python framework for APIs  
+- **Supabase (PostgreSQL)** – cloud database to store user data  
+- **AES-256 Encryption** – secure storage of secrets  
+- **Python-dotenv** – manage environment variables  
 
-## How the System Works
+---
 
-1. User credentials are encrypted before being stored
-2. Login queries use prepared statements to block injections
-3. SQL injection attempts are logged/blocked
-4. Admin operations require a special capability code
+## Cloud Role
 
-## Running the Project
+The database is hosted on **Supabase**, a cloud Postgres service. This makes the system:
 
-```
-npm install
-node server.js
-```
+- Accessible from anywhere via the internet  
+- Secure, as the cloud handles storage and backups  
+- Scalable, allowing multiple users to interact with the API  
 
-Configure database credentials and encryption keys in `.env`.
+FastAPI can run locally or be deployed on any cloud platform, connecting securely to the Supabase database. AES encryption ensures sensitive data is safe even in cloud storage, and parameterized SQL prevents injection attacks.
 
-## Output
+---
 
-* Password saved in encrypted form
-* SQL injection attempt rejected
-* Admin route works only with capability code
+## Security Features
+
+- **AES-256 encryption** – secrets are stored securely  
+- **Parameterized SQL queries** – prevents SQL injection  
+- **Capability code mechanism** – restricts access to SQL testing routes  
+
+---
+
+## How to Run
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
