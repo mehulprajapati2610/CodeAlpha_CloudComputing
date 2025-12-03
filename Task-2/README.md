@@ -45,28 +45,17 @@ FastAPI runs locally or on a cloud platform, connecting securely to the Supabase
 
 ## How to Use
 
-1. Install dependencies:
+```md
+## 1. Install dependencies
 ```bash
 pip install -r requirements.txt
-Create .env using .env.example with your credentials.
+```
 
-Initialize the database:
+## 2. Create your `.env` file
+Copy `.env.example` and rename it to `.env`, then fill in your credentials.
 
-bash
-Copy code
+## 3. Initialize the database
+```bash
 python db_init.py
-Run the FastAPI server:
-
-bash
-Copy code
-uvicorn app:app --reload
-Open Swagger UI in a browser:
-
-arduino
-Copy code
-http://127.0.0.1:8000/docs
-Test endpoints:
-
-/user/ → add users with AES-encrypted secrets
-
-/sql-test/ → test capability code access for SQL
+```
+```
