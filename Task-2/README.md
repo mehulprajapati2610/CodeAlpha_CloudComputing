@@ -43,13 +43,9 @@ FastAPI runs locally or on a cloud platform, connecting securely to the Supabase
 
 ---
 
-## How to Use
-
-```md
-## 1. Install dependencies
+### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
-```
 
 ## 2. Create your `.env` file
 Copy `.env.example` and rename it to `.env`, then fill in your credentials.
