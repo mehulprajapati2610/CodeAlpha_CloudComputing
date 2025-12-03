@@ -1,40 +1,72 @@
 # Task 2 – Detecting Data Leaks Using SQL Injection
 
-This project demonstrates a simple cloud-based system to **secure user data against SQL injection attacks**. It uses **AES-256 encryption** to protect sensitive information and a **capability code mechanism** to control access. The system implements **double-layer security** by combining encryption with safe SQL queries.
+This project is a **cloud-based system** designed to secure user data against SQL injection attacks. It demonstrates a **complete workflow** using FastAPI, AES-256 encryption, and a cloud-hosted database. The system implements **double-layer security** by combining encryption with parameterized SQL queries and a **capability code mechanism** to control access.
+
+---
+
+## What This Project Does
+
+- Stores user credentials and sensitive information **securely using AES-256 encryption**  
+- Protects against **SQL injection attacks** using parameterized queries  
+- Restricts access to SQL testing routes using a **capability code**  
+- Combines multiple security layers for **data leak prevention**  
 
 ---
 
 ## Technologies Used
 
-- **FastAPI** – lightweight Python framework for APIs  
-- **Supabase (PostgreSQL)** – cloud database to store user data  
-- **AES-256 Encryption** – secure storage of secrets  
-- **Python-dotenv** – manage environment variables  
+- **FastAPI** – Python framework for building APIs  
+- **Supabase (PostgreSQL)** – cloud-hosted database storing encrypted data  
+- **AES-256 Encryption** – secures sensitive information  
+- **Python-dotenv** – loads environment variables  
+- **psycopg2** – connects Python to PostgreSQL  
 
 ---
 
-## Cloud Role
+## How the Cloud is Involved
 
-The database is hosted on **Supabase**, a cloud Postgres service. This makes the system:
+- **Database hosting**: Supabase hosts the Postgres database in the cloud  
+- **Accessibility**: Makes the system reachable from anywhere over the internet  
+- **Security & backup**: Supabase ensures data is stored safely and backed up  
+- **Scalability**: Supports multiple users accessing the API simultaneously  
 
-- Accessible from anywhere via the internet  
-- Secure, as the cloud handles storage and backups  
-- Scalable, allowing multiple users to interact with the API  
-
-FastAPI can run locally or be deployed on any cloud platform, connecting securely to the Supabase database. AES encryption ensures sensitive data is safe even in cloud storage, and parameterized SQL prevents injection attacks.
-
----
-
-## Security Features
-
-- **AES-256 encryption** – secrets are stored securely  
-- **Parameterized SQL queries** – prevents SQL injection  
-- **Capability code mechanism** – restricts access to SQL testing routes  
+FastAPI runs locally or on a cloud platform, connecting securely to the Supabase database. This setup demonstrates how cloud services integrate into a secure system to manage and protect user data.
 
 ---
 
-## How to Run
+## How the Cloud Performs Its Role
+
+1. **Stores encrypted data** from the application securely  
+2. **Handles requests** from the API without exposing sensitive data  
+3. **Provides network access** so users and developers can interact with the system remotely  
+4. **Maintains reliability and backups**, ensuring the database is safe even in case of local failures  
+
+---
+
+## How to Use
 
 1. Install dependencies:
 ```bash
 pip install -r requirements.txt
+Create .env using .env.example with your credentials.
+
+Initialize the database:
+
+bash
+Copy code
+python db_init.py
+Run the FastAPI server:
+
+bash
+Copy code
+uvicorn app:app --reload
+Open Swagger UI in a browser:
+
+arduino
+Copy code
+http://127.0.0.1:8000/docs
+Test endpoints:
+
+/user/ → add users with AES-encrypted secrets
+
+/sql-test/ → test capability code access for SQL
