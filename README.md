@@ -20,9 +20,9 @@ Python, MongoDB Atlas, MySQL, Supabase, HTML/CSS/JS, React (optional), Netlify, 
 ## Structure
 
 ```
-/Task1
-/Task2
-/Task4
+/Task_Chatbot
+/Task_DataRedundancy
+/Task_SqlInjection
 README.md
 ```
 
