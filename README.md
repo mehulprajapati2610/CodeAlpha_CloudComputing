@@ -15,7 +15,7 @@ This repository contains all tasks completed for the CodeAlpha Cloud Computing I
 
 ## Technologies Used
 
-Python, MongoDB Atlas, MySQL, Supabase, HTML/CSS/JS, React (optional), Netlify, Render, AES-256.
+Python, MongoDB Atlas, MySQL, Supabase, HTML/CSS/JS, Netlify, Render, AES-256.
 
 ## Structure
 
@@ -24,12 +24,6 @@ Python, MongoDB Atlas, MySQL, Supabase, HTML/CSS/JS, React (optional), Netlify, 
 /Task_DataRedundancy
 /Task_SqlInjection
 README.md
-```
-
-## How to Run
-
-Each task folder has its own README with setup steps.
-Most backend tasks run with:
 
 ```
 npm install
