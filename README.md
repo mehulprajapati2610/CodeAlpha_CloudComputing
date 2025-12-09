@@ -26,9 +26,7 @@ Python, MongoDB Atlas, MySQL, Supabase, HTML/CSS/JS, Netlify, Render, AES-256.
 README.md
 
 ```
-npm install
-node server.js
-```
+
 
 ## Purpose
 
