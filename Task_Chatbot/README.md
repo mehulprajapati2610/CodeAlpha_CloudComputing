@@ -1,47 +1,78 @@
-# Simple Web-Based Chatbot
+# *Task 4: Cloud-Based AI Chatbot*
 
-A lightweight chatbot capable of responding to user inputs using predefined rules or basic NLP logic. It can be integrated into websites and hosted on the cloud.
+This project implements a cloud-powered AI chatbot using *Google Gemini 2.5 Flash*. The chatbot provides instant responses via a simple web interface and demonstrates how cloud-based AI services integrate with real-world applications.
 
-## Features
+---
 
-* Instant responses to user queries
-* Rule-based or simple logic processing
-* Clean browser-based UI
-* Backend API for handling messages
-* Cloud deployment support
+## *✨ Features*
 
-## Technologies Used
+- Fully generative chatbot using *Gemini AI*
+- Simple and clean Web UI (HTML, CSS, JS)
+- Flask backend for handling API requests
+- Fast, cloud-based AI response generation
 
-* HTML, CSS, JavaScript
-* Node.js or Python Flask
-* Netlify for frontend
-* Render for backend
+---
 
-## Basic Response Logic Example
+## *⚙ How It Works*
 
-```js
-if (message.includes("hello")) return "Hello! How can I help you today?";
-if (message.includes("timing")) return "Our timings are 9 AM to 7 PM.";
+### *Step 1: Frontend*
+index.html contains the user interface with a message input box and a chat display area.
+
+### *Step 2: Backend*
+chatbot.py built using Flask receives the user message and sends it to the Gemini API.
+
+### *Step 3: Cloud AI*
+Google Gemini (running on Google Cloud servers) processes the text and generates the AI response.
+
+### *Step 4: Response Display*
+The Flask backend returns the generated text to the browser, where it is displayed instantly.
+
+---
+
+# Setup Instructions
+
+## Clone the repository
+
+```bash
+git clone https://github.com/username/repo-name.git
+cd repo-name
 ```
 
-## Running the Project
+## Create a .env file from the example
 
-### Backend
-
-```
-npm install
-node bot.js
+```bash
+cp .env.example .env
 ```
 
-### Frontend
+## Add your Gemini API key
 
-Open `chat.html` in the browser.
+```env
+GEMINI_API_KEY=YOUR_API_KEY
+```
 
-## Output
+## Install dependencies
 
-* User messages displayed in chat
-* Chatbot responds automatically based on defined rules
+```bash
+pip install -r requirements.txt
+```
 
-## Demo Video
+## Run the Flask backend
 
-(Add LinkedIn demo link)
+```bash
+python chatbot.py
+```
+
+## Open the web UI
+
+Open `index.html` using **VS Code Live Server** or a browser.
+
+Type a message and get instant responses from the cloud AI chatbot.
+
+---
+
+# Cloud Computing Role
+
+* The chatbot uses **Google Gemini API**, which runs entirely on **Google Cloud**.
+* All message processing and AI computations happen in the cloud, not on the local machine.
+* The backend only sends requests and receives responses, demonstrating serverless cloud inference.
+* This shows practical integration of cloud AI services into a web application.
